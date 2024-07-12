@@ -31,7 +31,6 @@
   display: flex;
 }
 
-
 .host-info {
   @include flex-structure();
   align-items: flex-end;
@@ -41,8 +40,6 @@
     display: flex;
     gap: 10px;
     width: 115px;
-    margin-right: 35px;
-    
   }
 
  p {
