@@ -1,0 +1,25 @@
+/* Import des fichiers Sass depuis le fichier main.scss */
+@import './mixin.scss';
+@import './variable.scss';
+@import './header.scss';
+@import './banner.scss';
+@import './card.scss';
+@import './error404.scss';
+@import './fichelogements.scss';
+@import './home.scss';
+@import './footer.scss';
+@import './collapse.scss';
+@import './carrousel.scss';
+@import './tag.scss';
+
+/* Importation de la police Montserrat depuis Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/* style du body pour configurer la page */
+
+body {
+    display: flex;
+	max-width: 1440px;
+	flex-direction: column;
+	margin: auto;
+  }

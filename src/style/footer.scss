@@ -1,0 +1,32 @@
+.footer {
+    background-color: $primary-color;
+    @include flex-structure();
+    padding-bottom: 10px;
+
+    .kasa-image1 {
+        margin-top: 50px;
+    }
+
+    h1{
+        color: $secondary-color;
+        @include font-style('Montserrat', 24px, 500, 34px, $terciero-color);
+        margin-top: 30px; 
+    }
+}
+
+/* media queries pour la version mobile*/
+@media (max-width:767px) {
+   .footer {
+    .kasa-image1 {
+        margin-top: 70px;
+    }
+
+    h1 {
+        font-size: 15px;
+        line-height: 19px;
+        width: 133px;
+        text-align: center;
+        padding-bottom: 30px;
+    }
+   }
+}

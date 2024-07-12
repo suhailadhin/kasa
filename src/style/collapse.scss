@@ -1,0 +1,101 @@
+.collapse {
+    margin: 40px 70px 20px 70px ;
+    padding: 0;
+
+   ul {
+        list-style-type: none;
+        padding: 10px;
+        background-color: $qater-color;
+        @include font-style('Montserrat', 24px, 700, 34px, $terciero-color);
+        border-radius: 5px;
+        @include flex-structure();
+        flex-direction: row;
+    }
+
+    li { 
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+
+    .svg-inline--fa {
+        font-size: 24px;
+        
+    }
+
+    p {
+        background-color: $secondary-color;
+        @include font-style('Montserrat', 17px, 500, 34px,$primary-color);
+        padding: 20px 40px;
+        margin-top: -24px;
+        text-align: justify;
+    }
+
+    &.logements {
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        gap: 76px;
+        
+
+        .sectionlogements {
+            display: flex;
+            align-items: start;
+            flex-wrap: wrap;
+            flex-direction: row;
+            width: 100%;
+        }
+        
+        ul {
+        @include font-style('Montserrat', 18px, 700, 25px, $terciero-color);
+        border-radius: 5px;
+        display: flex;
+        width: 100%;
+    }
+
+    .list{
+        @include font-style('Montserrat', 17px, 500, 34px, $primary-color);
+        margin-top: -18px;
+        width: 100%;
+    }
+    };
+
+};
+
+/* media queries pour la version mobile*/
+@media (max-width:767px) {
+    .collapse {
+            margin: 0;
+            
+        ul {
+            padding: 5px 15px;
+            margin: 25px 0;
+            @include font-style('Montserrat', 13px, 700, 18px, $terciero-color );
+        }
+
+       &.logements {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+
+            ul {
+                width: auto;
+                @include font-style('Montserrat', 13px, 700, 18px, $terciero-color );
+                margin: 10px;
+            }
+
+            .sectionlogements {
+                display: block;
+
+                ul {
+                    margin: 10px 0;
+                }
+
+                .list {
+                    width: auto;
+                    margin-top: auto;
+                }
+            }     
+       }
+    };
+};

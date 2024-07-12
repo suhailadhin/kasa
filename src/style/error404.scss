@@ -1,0 +1,41 @@
+.section-error {
+    @include flex-structure();
+
+    h1 {
+        @include font-style ('Montserrat', 288px, 700, 410px,$qater-color);
+        margin: auto;
+    }
+
+    p {
+        @include font-style ('Montserrat', 36px, bold, 51px,$qater-color);
+        margin-top: 100px;
+    }
+
+    a {
+        @include font-style ('Montserrat', 18px, bold, 21px, $primary-color);
+        margin: 120px 0px;
+        
+    }
+};
+
+/* media queries pour la version mobile*/
+@media (max-width: 767px) {
+      .section-error {
+        margin: 0 30px;
+
+        h1 {
+            font-size: 96px;
+        }
+
+        p {
+            text-align: center;
+            line-height: 25px;
+            font-size: 18px;  
+            margin: auto;
+          }
+
+          a {
+            font-size: 14px;
+          }
+      };
+};

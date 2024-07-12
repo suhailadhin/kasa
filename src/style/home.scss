@@ -1,0 +1,13 @@
+.main-container {
+    margin: 0px 60px 25px 60px;
+    @include flex-structure();
+    align-items: normal;
+};
+
+/* media queries pour la version mobile*/
+@media (max-width:767px) {
+
+    .main-container {
+    margin: 0px 20px 25px 20px;
+}
+};

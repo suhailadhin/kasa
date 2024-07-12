@@ -1,0 +1,59 @@
+/*style pour la partie carte*/
+
+.card-container {
+    margin: 30px 0;
+    padding: 60px 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: $secondary-color;
+    border-radius: 25px;
+    gap: 60px;
+
+    a {
+        border-radius: 10px;
+        position: relative;
+    }
+
+    /*definir l'image de la carte*/
+img {
+    height: 340px;
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    filter: brightness(0.7);
+    transition: transform 0.5s ease-in-out;
+
+    &:hover {
+        box-shadow: 2px 2px 2px 2px  rgba(0, 0, 0, 0.25);
+        filter: contrast();
+    }
+}
+
+.card h2 {
+    position: absolute;
+    @include font-style('Montserrat', 18px, 700, 25px, $terciero-color);
+    bottom: 20px;
+    margin: 0;
+    padding: 10px;
+}
+};
+
+/* media queries pour la version tablette*/
+@media (max-width: 1124px) {
+    .card-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 30px 25px;
+        gap: 30px;
+    }
+}
+
+/* media queries pour la version mobile*/
+@media (max-width: 767px) {
+    .card-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 0;
+        gap: 30px;
+    }
+}

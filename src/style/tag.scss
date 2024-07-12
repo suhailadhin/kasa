@@ -1,0 +1,13 @@
+.tag {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    .tag-item {
+        background-color: $qater-color;
+        padding: 5px 25px;
+        border-radius: 10px;
+        @include font-style("Montserrat", 14px, 500, 19px, $terciero-color);
+        cursor: pointer;
+    }
+}
