@@ -14,11 +14,11 @@ function App() {
     <>
       <Header />
       <Routes>
+      <Route path="*" element={<PageNotFound />} />
         <Route path="/" element={<Home />} />
         <Route path="/abouts" element={<Abouts />} />
-
           <Route path="/fichelogements/:id"  element={<Fichelogements />} />
-          <Route path="*" element={<PageNotFound />} />
+          
       </Routes>
       <Footer />
       
