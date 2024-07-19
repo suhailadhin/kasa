@@ -17,9 +17,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/abouts" element={<Abouts />} />
 
-         {/* Fallback route for 404 errors */}
-         <Route path="*" element={<PageNotFound />} />
-         <Route path="/fichelogements/:id"  element={<Fichelogements />} />
+          <Route path="/fichelogements/:id"  element={<Fichelogements />} />
+          <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />
       

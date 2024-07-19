@@ -20,7 +20,16 @@
 
     .svg-inline--fa {
         font-size: 24px;
-        
+        transition: -webkit-transform 0.6s ease;
+		transition: transform 0.6s ease;
+    }
+
+    .rotate-down {
+        transform: rotate(0deg);
+    }
+
+    .rotate-up {
+        transform: rotate(360deg);
     }
 
     p {

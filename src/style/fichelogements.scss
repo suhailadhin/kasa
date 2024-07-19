@@ -33,25 +33,24 @@
 
 .host-info {
   @include flex-structure();
-  align-items: flex-end;
+  align-items: normal;
   gap: 30px;
 
   .figcaption {
     display: flex;
     gap: 10px;
-    width: 115px;
   }
 
  p {
   @include font-style('Montserrat', 18px, 500, 25px, $qater-color );
   margin-top: 10px;
+  width: 100px;
 }
 
 img {
   border-radius: 50%;
   width: 64px;
-  height: 64px;
-  margin-right: 10px; 
+  height: 64px; 
 }
 };
 

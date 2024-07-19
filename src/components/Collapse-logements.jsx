@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 
-const CollapseLogements = () => {
+const CollapseLogements = (props) => {
     const [isDescriptionVisible, setDescriptionVisibility] = useState(false);
     const [isEquipmentsVisible, setEquipmentsVisibility] = useState(false);
+
 
     const toggleDescriptionVisibility = () => {
         setDescriptionVisibility(!isDescriptionVisible);
@@ -13,6 +14,11 @@ const CollapseLogements = () => {
     const toggleEquipmentsVisibility = () => {
         setEquipmentsVisibility(!isEquipmentsVisible);
     };
+
+const equipments = props.logement.equipments && props.logement.equipments.map((equipement, index) => (
+    <li key={index} className='list'>{equipement}</li>
+))
+    
 
     return (
         <div>
@@ -25,7 +31,7 @@ const CollapseLogements = () => {
                         </div>
                     </ul>
                     {isDescriptionVisible && (
-                        <p className='list'>Your description content goes here.</p>
+                        <p className='list'>{props.logement.description}</p>
                     )}
                 </div>
 
@@ -36,9 +42,8 @@ const CollapseLogements = () => {
                             <FontAwesomeIcon icon={isEquipmentsVisible ? faAngleDown : faAngleUp } />
                         </div>
                     </ul>
-                    {isEquipmentsVisible && (
-                        <p className='list'>bbb</p>
-                    )}
+                    {isEquipmentsVisible && (equipments) }
+                    
                 </div>
             </div>
         </div>

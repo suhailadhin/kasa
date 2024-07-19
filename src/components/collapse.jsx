@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleUp, faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 
 const Collapse = () => {
   const [isVisible, setIsVisible] = useState({
@@ -60,7 +60,10 @@ const Collapse = () => {
             {section.title}
             <li>
               <div onClick={() => toggleVisibility(section.key)}>
-                <FontAwesomeIcon icon={isVisible[section.key] ? faAngleDown : faAngleUp } />
+                <FontAwesomeIcon 
+                  icon={isVisible[section.key] ? faAngleUp : faAngleDown} 
+                  className={isVisible[section.key] ? 'rotate-up' : 'rotate-down'} 
+                />
               </div>
             </li>
           </ul>
