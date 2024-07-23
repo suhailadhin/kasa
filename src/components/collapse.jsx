@@ -10,7 +10,7 @@ const Collapse = () => {
     securite: false
   });
 
-  const sections = [
+  const articles = [
     {
       key: 'fiabilite',
       title: 'Fiabilité',
@@ -53,25 +53,32 @@ const Collapse = () => {
   }, []);
 
   return (
-    <div className='collapse'>
-      {sections.map(section => (
-        <div key={section.key}>
-          <ul>
-            {section.title}
-            <li>
-              <div onClick={() => toggleVisibility(section.key)}>
-                <FontAwesomeIcon 
-                  icon={isVisible[section.key] ? faAngleUp : faAngleDown} 
-                  className={isVisible[section.key] ? 'rotate-up' : 'rotate-down'} 
-                />
-              </div>
-            </li>
-          </ul>
-          {isVisible[section.key] && <p>{section.content}</p>}
+    <div className='collapse abouts'>
+      {articles.map(article => (
+        <div key={article.key} className='section__abouts'>
+          <div 
+            className='section__pannel' 
+            onClick={() => toggleVisibility(article.key)}
+            aria-expanded={isVisible[article.key]}
+          >
+            <span>{article.title}</span>
+            <FontAwesomeIcon 
+              icon={isVisible[article.key] ?faAngleDown  :faAngleUp } 
+              className={isVisible[article.key] ?  'rotate-up': 'rotate-down'} 
+            />
+          </div>
+          
+          <div className={`section-content ${isVisible[article.key] ?  'translate-down' : 'translate-up'}`}>
+            {isVisible[article.key] && <p>{article.content}</p>}
+          </div>
         </div>
       ))}
     </div>
   );
+  
 };
 
 export default Collapse;
+
+
+

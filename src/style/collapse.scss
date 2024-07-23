@@ -1,110 +1,135 @@
 .collapse {
-    margin: 40px 70px 20px 70px ;
+    margin: 40px 0px 20px 0px;
     padding: 0;
 
-   ul {
+    ul {
         list-style-type: none;
-        padding: 10px;
-        background-color: $qater-color;
         @include font-style('Montserrat', 24px, 700, 34px, $terciero-color);
         border-radius: 5px;
         @include flex-structure();
-        flex-direction: row;
-    }
-
-    li { 
-        display: flex;
-        justify-content: space-between;
-        cursor: pointer;
+        justify-content: center; 
+        
     }
 
     .svg-inline--fa {
         font-size: 24px;
-        transition: -webkit-transform 0.6s ease;
-		transition: transform 0.6s ease;
+        transition: transform 0.6s ease;
+        color: $terciero-color;
+        cursor: pointer;
     }
 
     .rotate-down {
-        transform: rotate(0deg);
-    }
-
-    .rotate-up {
         transform: rotate(360deg);
     }
 
+    .rotate-up {
+        transform: rotate(0deg);
+    }
+
     p {
-        background-color: $secondary-color;
-        @include font-style('Montserrat', 17px, 500, 34px,$primary-color);
-        padding: 20px 40px;
-        margin-top: -24px;
+        @include font-style('Montserrat', 17px, 500, 34px, $primary-color);
         text-align: justify;
+        padding: 20px 20px;
+        margin: auto;
     }
 
     &.logements {
-        margin: auto;
+       
         display: flex;
-        justify-content: space-between;
-        gap: 76px;
-        
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 60px; 
 
         .sectionlogements {
             display: flex;
-            align-items: start;
-            flex-wrap: wrap;
-            flex-direction: row;
+            flex-direction: column; 
             width: 100%;
         }
         
-        ul {
-        @include font-style('Montserrat', 18px, 700, 25px, $terciero-color);
-        border-radius: 5px;
-        display: flex;
-        width: 100%;
-    }
-
-    .list{
-        @include font-style('Montserrat', 17px, 500, 34px, $primary-color);
-        margin-top: -18px;
-        width: 100%;
-    }
-    };
-
-};
-
-/* media queries pour la version mobile*/
-@media (max-width:767px) {
-    .collapse {
-            margin: 0;
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px 10px 10px;
+            background-color: $qater-color; 
+            border-radius: 5px;
             
+            &:span {
+                border-radius: 25px;
+            }
+        }
+
+        .section-title span {
+            @include font-style('Montserrat', 18px, 700, 25px, $terciero-color);
+        }
+
+        .section-title .svg-inline--fa {
+            margin-left: 10px; 
+        }
+
+        .contents {
+            display: flex;
+            justify-content: flex-start;
+            background-color: $secondary-color;
+            padding: 20px 20px;
+            transition: max-height 0.5s ease, opacity 0.5s ease; 
+            overflow: hidden; 
+            max-height: 0; 
+            opacity: 0; 
+            height: -webkit-fill-available;
+        }
+
+        // Classe pour translation vers le bas
+.translate-down {
+    max-height: 500px; 
+    opacity: 1; 
+}
+
+// Classe pour translation vers le haut
+.translate-up {
+    max-height: 0; 
+    
+}
+
+        .list {
+            @include font-style('Montserrat', 17px, 500, 34px, $primary-color);
+            width: 100%;
+        }
+    }
+}
+
+/* Media queries pour la version mobile */
+@media (max-width: 767px) {
+    .collapse {
+        margin: 0;
+        
         ul {
             padding: 5px 15px;
             margin: 25px 0;
-            @include font-style('Montserrat', 13px, 700, 18px, $terciero-color );
+            @include font-style('Montserrat', 13px, 700, 18px, $terciero-color);
         }
 
-       &.logements {
+        &.logements {
             display: flex;
             flex-direction: column;
-            gap: 0;
+            gap: 10px; 
 
-            ul {
-                width: auto;
-                @include font-style('Montserrat', 13px, 700, 18px, $terciero-color );
-                margin: 10px;
+            .section-title {
+                flex-direction: row; 
             }
 
-            .sectionlogements {
-                display: block;
+            .section-title span {
+                font-size: 13px; 
+            }
 
-                ul {
-                    margin: 10px 0;
-                }
+            .section-title .svg-inline--fa {
+                font-size: 20px; 
+            }
 
-                .list {
-                    width: auto;
-                    margin-top: auto;
-                }
-            }     
-       }
-    };
-};
+            .list {
+                width: auto;
+                margin-top: 0; 
+            }
+        }
+    }
+}

@@ -1,6 +1,5 @@
 .main-container {
   @include flex-structure ();
-  text-align: center; 
 }
 
 .content {
@@ -43,8 +42,7 @@
 
  p {
   @include font-style('Montserrat', 18px, 500, 25px, $qater-color );
-  margin-top: 10px;
-  width: 100px;
+  
 }
 
 img {
