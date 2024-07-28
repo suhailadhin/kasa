@@ -1,7 +1,7 @@
 import React from 'react';
 import Banner from "../components/Banner";
 import bannerImageAbout from "../assets/image/image-banner-abouts.png";
-import Collapse from '../components/collapse';
+import Collapse from '../components/Collapse';
 
 const Abouts = () => {
   
