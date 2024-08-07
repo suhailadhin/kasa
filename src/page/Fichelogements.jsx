@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams , useNavigate } from 'react-router-dom';
 import Carrousel from '../components/Carrousel';
-import CollapseLogements from '../components/Collapse-logements';
+import {CollapseLogements} from '../components/Collapse';
 import RatingStars from '../components/RatingStars';
 import TagList from '../components/Tags';
 
